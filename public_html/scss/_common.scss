@@ -136,11 +136,9 @@ i, .i{
 
 .section{
   > .wrapper{
-    $lrPadding: $contentPadding;
-
-    min-width: $contentMinWidth - ($lrPadding * 2) - 16;
-    max-width: $contentMaxWidth - ($lrPadding * 2) - 16;
-    padding: $contentPadding 0 0;
+    min-width: $contentMinWidth - ($contentPadding * 2) - 16;
+    max-width: $contentMaxWidth - ($contentPadding * 2) - 16;
+    padding: $contentPadding $contentPadding 0;
     margin: 0 auto;
   }
   &.inverted{
@@ -151,6 +149,11 @@ i, .i{
     > .wrapper{
       padding-top: $contentPadding * 2;
       padding-bottom: $contentPadding * 2;
+    }
+  }
+  @media screen and (max-width: $mobileMaxWidth) {
+    > .wrapper{
+      padding: $contentPadding $contentPadding / 2 0;
     }
   }
 }
@@ -247,9 +250,8 @@ a{
   }
   .image{
     margin-bottom: $contentPadding / 2;
-    .img{
-      border: #ccc dashed 1px;
-      min-height: 50px;
+    img{
+      max-width: 100%;
     }
     .caption{
       @extend .i;
@@ -262,9 +264,48 @@ a{
       margin-bottom: 0;
     }
   }
-  @media screen and (max-width: $mobileMaxWidth) {
+  @media screen and (max-width: $tabletMaxWidth) {
     > .wrapper{
       width: 100%;
+    }
+  }
+}
+
+.comments-grid{
+  .item{
+    border-bottom: 1px solid #ddd;
+    .column{
+      display: inline-block;
+      float: left;
+      > .wrapper{
+        padding: $contentPadding 0 $contentPadding $contentPadding;
+      }
+      &.c1{
+        width: 12%;
+        img{
+          max-width: 100%;
+        }
+      }
+      &.c2{
+        width: 88%;
+      }
+      &:last-child{
+        > .wrapper{
+          padding-right: $contentPadding;
+        }
+      }
+    }
+    .info{
+      @extend .small.font.size;
+
+      margin-bottom: $contentPadding / 2;
+      .note{
+        text-align: right;
+      }
+    }
+    &:last-child{
+      margin-bottom: 0;
+      border-bottom: none;
     }
   }
 }

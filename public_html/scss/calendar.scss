@@ -1,9 +1,13 @@
 @import "common";
 
 .s0{
-  nav{
-    @extend .b;
+  .breadcrumbs{
+    padding-top: 1.5em;
+    nav{
+      @extend .b;
+    }
   }
+
   .datepicker-wrapper{
     text-align: right;
     form{
@@ -28,6 +32,9 @@
     }
   }
   @media screen and (max-width: $mobileMaxWidth) {
+    .breadcrumbs{
+      padding-top: 0;
+    }
     .datepicker-wrapper{
       text-align: left;
       span{
@@ -37,5 +44,42 @@
         }
       }
     }
+  }
+}
+
+.macros-table{
+  @extend .medium.font.size;
+
+  margin-top: 25px;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  .row{
+    > .column{
+      width: (100% / 5);
+      padding: 5px;
+      margin: 0;
+      border-top: 1px solid #eee;
+      border-right: 1px solid #eee;
+      text-align: center;
+      &:first-child{
+        width: (100% * 2 / 5);
+      }
+      &.daily{
+        color: green;
+        &.active{
+          color: red;
+        }
+      }
+    }
+    &:first-child{
+      background: #eee;
+    }
+  }
+  &.nomargin{
+    margin-top: 0;
+  }
+  @media screen and (max-width: $mobileMaxWidth) {
+    font-size: 13px;
+    line-height: 1.5em;
   }
 }
