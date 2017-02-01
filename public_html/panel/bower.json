@@ -1,0 +1,22 @@
+{
+  "name": "Comet Engine",
+  "authors": [
+    "Comet"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "lt-ie-9": "~0.1.0",
+    "jquery-form": "~3.46.0",
+    "font-awesome": "~4.4.0",
+    "js-cookie": "~2.0.4"
+  }
+}

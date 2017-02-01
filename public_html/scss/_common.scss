@@ -1,0 +1,270 @@
+$black: #333;
+$gray: #777;
+$accent: #4a447e;
+$accentExt: #f28559;
+
+$mobileMinWidth: 320px;
+$mobileMaxWidth: 768px;
+$tabletMaxWidth: 1024px;
+
+$contentMinWidth: $mobileMinWidth;
+$contentMaxWidth: 1280px;
+$contentPadding: 36px;
+
+$gridGutter: 10%;
+
+$inputsHeight: 46px;
+$inputsPadding: 10px;
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,300i,500,500i,700,700i,900&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400i&subset=cyrillic');
+
+@import "reset";
+@import "clearfix";
+@import "mixins";
+@import "forms";
+@import "datepicker";
+
+@media screen and (max-width: $tabletMaxWidth) {
+  .mobile-visible {
+    display: block;
+  }
+  .desktop-visible {
+    display: none;
+  }
+}
+@media screen and (min-width: $tabletMaxWidth + 1) {
+  .mobile-visible {
+    display: none;
+  }
+  .desktop-visible {
+    display: block;
+  }
+}
+
+.box{
+  $boxSizing: border-box;
+  box-sizing: $boxSizing;
+  -moz-box-sizing: $boxSizing;
+  -webkit-box-sizing: $boxSizing;
+}
+
+.flex{
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+}
+
+.font{
+  &.serif{
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+  }
+  &.classic{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    &.size{
+      font-size: 17px;
+      line-height: 1.5em;
+    }
+  }
+  &.medium{
+    &.size{
+      font-size: 15px;
+      line-height: 1.5em;
+    }
+  }
+  &.small{
+    &.size{
+      font-size: 13px;
+      line-height: 1.5em;
+    }
+  }
+}
+b, strong, .b{
+  font-weight: 500;
+}
+i, .i{
+  @extend .serif.font;
+
+  font-style: italic;
+}
+.extrabold{
+  font-weight: 700;
+}
+
+.grid{
+  .column {
+    @extend .box;
+
+    display: inline-block;
+    float: left;
+  }
+  .x2 {
+    @include gridRow(2, $gridGutter / 2, $gridGutter / 2);
+  }
+  .x3 {
+    @include gridRow(3, $gridGutter / 2, $gridGutter / 2);
+  }
+  .x4 {
+    @include gridRow(4, $gridGutter / 4, $gridGutter / 4);
+  }
+
+  @media screen and (max-width: $mobileMaxWidth) {
+    .x2, .x3, .x4{
+      .column {
+        width: auto;
+        margin: 0;
+        margin-bottom: $contentPadding;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+      .column {
+        display: block;
+        float: none;
+      }
+    }
+  }
+}
+
+.content-wrapper{
+  margin-top: $contentPadding;
+}
+
+.section{
+  > .wrapper{
+    $lrPadding: $contentPadding;
+
+    min-width: $contentMinWidth - ($lrPadding * 2) - 16;
+    max-width: $contentMaxWidth - ($lrPadding * 2) - 16;
+    padding: $contentPadding 0 0;
+    margin: 0 auto;
+  }
+  &.inverted{
+    margin-top: $contentPadding;
+    margin-bottom: $contentPadding;
+    background: $accentExt;
+    color: #fff;
+    > .wrapper{
+      padding-top: $contentPadding * 2;
+      padding-bottom: $contentPadding * 2;
+    }
+  }
+}
+
+html{
+  height: 100%;
+}
+body{
+  @extend .classic.font;
+  @extend .classic.font.size;
+
+  position: relative;
+  min-height: 100%;
+  color: $black;
+  &-fade, &-wait{
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  &-wait{
+    z-index: 1001;
+    height: 100vh;
+    background: url("../img/preloader_accent.gif") 50% 50% no-repeat;
+  }
+}
+
+h1, h2, h3{
+  @extend .extrabold;
+}
+h1{
+  font-size: 46px;
+  line-height: 1.3em;
+  margin-bottom: $contentPadding;
+  @media screen and (max-width: $mobileMaxWidth) {
+    font-size: 36px;
+    line-height: 1.4em;
+  }
+}
+h2{
+  font-size: 34px;
+  line-height: 1.4em;
+  margin-bottom: $contentPadding;
+  @media screen and (max-width: $mobileMaxWidth) {
+    font-size: 26px;
+    line-height: 1.4em;
+  }
+}
+h3{
+  font-size: 26px;
+  line-height: 1.5em;
+  margin-bottom: $contentPadding;
+  @media screen and (max-width: $mobileMaxWidth) {
+    font-size: 20px;
+    line-height: 1.4em;
+  }
+}
+
+
+a{
+  color: $accent;
+  text-decoration: underline;
+  &:hover{
+    text-decoration: none;
+    color: $accentExt;
+  }
+}
+
+.header{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  background: $accent;
+  color: #fff;
+  transition: 0.3s;
+  > .wrapper{
+    padding-top: $contentPadding / 2;
+    padding-bottom: $contentPadding / 2;
+  }
+}
+
+.footer{
+  > .wrapper{
+    padding-top: $contentPadding * 2;
+    padding-bottom: $contentPadding * 2;
+  }
+}
+
+.media{
+  > .wrapper{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .image{
+    margin-bottom: $contentPadding / 2;
+    .img{
+      border: #ccc dashed 1px;
+      min-height: 50px;
+    }
+    .caption{
+      @extend .i;
+      @extend .small.font.size;
+
+      margin-top: 0.5em;
+      text-align: center;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (max-width: $mobileMaxWidth) {
+    > .wrapper{
+      width: 100%;
+    }
+  }
+}

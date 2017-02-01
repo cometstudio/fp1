@@ -1,0 +1,41 @@
+@import "common";
+
+.s0{
+  nav{
+    @extend .b;
+  }
+  .datepicker-wrapper{
+    text-align: right;
+    form{
+      margin-top: 15px;
+    }
+    span{
+      &.datepicker-container {
+        position: relative;
+        display: inline-block;
+        margin: 0 0.8em;
+      }
+    }
+    i{
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      margin-top:  -0.5em;
+    }
+    input{
+      width: auto;
+      max-width: 180px;
+    }
+  }
+  @media screen and (max-width: $mobileMaxWidth) {
+    .datepicker-wrapper{
+      text-align: left;
+      span{
+        display: none;
+        &.datepicker-container {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

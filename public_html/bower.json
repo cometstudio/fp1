@@ -1,0 +1,26 @@
+{
+  "name": "fitnespraktika",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Alexander A. Zimmerman"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "lt-ie-9": "~0.1.0",
+    "jquery-form": "~3.46.0",
+    "font-awesome": "~4.7.0",
+    "cookie": "^1.1.0",
+    "magnific-popup": "Magnific-Popup#^1.1.0"
+  }
+}

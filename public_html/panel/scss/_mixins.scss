@@ -1,0 +1,33 @@
+@mixin round($radius){
+
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin bottomRound($radius){
+  border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+}
+
+@mixin topRound($radius){
+  border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+}
+
+@mixin shadow(){
+  $radius: 10px;
+  $alpha: 0.2;
+
+  box-shadow: 0 1px $radius rgba(0,0,0,$alpha);
+  -moz-box-shadow: 0 1px $radius rgba(0,0,0,$alpha);
+  -webkit-box-shadow: 0 1px $radius rgba(0,0,0,$alpha);
+}

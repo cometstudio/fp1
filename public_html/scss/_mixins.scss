@@ -1,0 +1,15 @@
+@mixin gridRow($n, $gutter, $responsiveBottomMargin){
+  > .column{
+    width: (100% - ($gutter * ($n - 1))) / $n;
+    margin-right: $gutter;
+    &:nth-child(#{$n}n){
+      margin-right: 0;
+    }
+  }
+}
+
+@mixin round($radius){
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
