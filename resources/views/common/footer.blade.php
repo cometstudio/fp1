@@ -1,5 +1,5 @@
 <div class="footer section">
     <div class="wrapper">
-        footer 1
+        <a href="{{ route('index', [], false) }}">Фитнес-практика</a>
     </div>
 </div>

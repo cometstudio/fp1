@@ -33,6 +33,8 @@ class DiaryController extends Controller
             );
         }
 
+        $calendar->setAttribute('views', $calendar->views+1)->update();
+
         $exercises = $calendar->exercises()->get();
 
         $recipes = $calendar->recipes()->get();
@@ -46,6 +48,8 @@ class DiaryController extends Controller
         $commentsHash = (new Comment)->hash($request->segments()[0].'_'.$startAt);
 
         $title = (!empty($calendar->collect_article) && !empty($calendar->text)) ? $calendar->title : 'Дневник. День '.$seasonDaysLeft;
+
+
 
         return view(
             'diary.index', [

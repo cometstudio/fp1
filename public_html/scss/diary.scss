@@ -47,6 +47,20 @@
   }
 }
 
+.s3{
+  @extend .medium.font.size;
+
+  @media screen and (max-width: $mobileMaxWidth) {
+    .l, .r{
+      float: none;
+    }
+    .r{
+      float: none;
+      margin-top: $contentPadding / 3;
+    }
+  }
+}
+
 .macros-table{
   @extend .medium.font.size;
 

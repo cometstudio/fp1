@@ -462,8 +462,6 @@ a {
         max-width: 100%; }
     .comments-grid .item .column.c2 {
       width: 88%; }
-    .comments-grid .item .column:last-child > .wrapper {
-      padding-right: 36px; }
   .comments-grid .item .info {
     margin-bottom: 18px; }
     .comments-grid .item .info .note {

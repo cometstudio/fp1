@@ -208,14 +208,14 @@ input[type="checkbox"] {
   .font.classic.size, body {
     font-size: 17px;
     line-height: 1.5em; }
-.font.medium.size, .form label, .form .label, .media .image .caption, .s3, .macros-table {
+.font.medium.size, .form label, .form .label, .media .image .caption {
   font-size: 15px;
   line-height: 1.5em; }
 .font.small.size, .media-grid .stat, .comments-grid .item .info {
   font-size: 13px;
   line-height: 1.5em; }
 
-b, strong, .b, .header .l span, .header .l a, .s0 .breadcrumbs nav {
+b, strong, .b, .header .l span, .header .l a {
   font-weight: 500; }
 
 i, .i, .header .social-links, .media .image .caption, .media-grid .image .label {
@@ -470,65 +470,4 @@ a {
     margin-bottom: 0;
     border-bottom: none; }
 
-.s0 .breadcrumbs {
-  padding-top: 1.5em; }
-.s0 .datepicker-wrapper {
-  text-align: right; }
-  .s0 .datepicker-wrapper form {
-    margin-top: 15px; }
-  .s0 .datepicker-wrapper span.datepicker-container {
-    position: relative;
-    display: inline-block;
-    margin: 0 0.8em; }
-  .s0 .datepicker-wrapper i {
-    position: absolute;
-    right: 0.5em;
-    top: 50%;
-    margin-top: -0.5em; }
-  .s0 .datepicker-wrapper input {
-    width: auto;
-    max-width: 180px; }
-@media screen and (max-width: 768px) {
-  .s0 .breadcrumbs {
-    padding-top: 0; }
-  .s0 .datepicker-wrapper {
-    text-align: left; }
-    .s0 .datepicker-wrapper span {
-      display: none; }
-      .s0 .datepicker-wrapper span.datepicker-container {
-        margin: 0; } }
-
-@media screen and (max-width: 768px) {
-  .s3 .l, .s3 .r {
-    float: none; }
-  .s3 .r {
-    float: none;
-    margin-top: 12px; } }
-
-.macros-table {
-  margin-top: 25px;
-  border-left: 1px solid #eee;
-  border-bottom: 1px solid #eee; }
-  .macros-table .row > .column {
-    width: 20%;
-    padding: 5px;
-    margin: 0;
-    border-top: 1px solid #eee;
-    border-right: 1px solid #eee;
-    text-align: center; }
-    .macros-table .row > .column:first-child {
-      width: 40%; }
-    .macros-table .row > .column.daily {
-      color: green; }
-      .macros-table .row > .column.daily.active {
-        color: red; }
-  .macros-table .row:first-child {
-    background: #eee; }
-  .macros-table.nomargin {
-    margin-top: 0; }
-  @media screen and (max-width: 768px) {
-    .macros-table {
-      font-size: 13px;
-      line-height: 1.5em; } }
-
-/*# sourceMappingURL=diary.css.map */
+/*# sourceMappingURL=users.css.map */

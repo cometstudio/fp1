@@ -1,0 +1,9 @@
+@import "common";
+
+.s0{
+  #profile-picture{
+    &.hidden {
+      display: none;
+    }
+  }
+}

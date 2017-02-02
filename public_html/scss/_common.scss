@@ -436,11 +436,6 @@ a{
       &.c2{
         width: 88%;
       }
-      &:last-child{
-        > .wrapper{
-          padding-right: $contentPadding;
-        }
-      }
     }
     .info{
       @extend .small.font.size;

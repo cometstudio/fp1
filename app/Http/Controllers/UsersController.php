@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 
 class UsersController extends Controller
 {
-    protected $css = 'user';
+    protected $css = 'users';
 
     public function login()
     {
