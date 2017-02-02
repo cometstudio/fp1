@@ -1,0 +1,21 @@
+@import "common";
+
+.s0{
+  .stat{
+    @extend .medium.font.size;
+
+    .l{
+      @extend .b;
+    }
+  }
+  @media screen and (max-width: $mobileMaxWidth) {
+    .stat{
+      .l, .r{
+        float: none;
+      }
+      .l{
+        margin: 15px 0 5px;
+      }
+    }
+  }
+}

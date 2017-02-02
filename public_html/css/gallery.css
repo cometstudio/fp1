@@ -208,14 +208,14 @@ input[type="checkbox"] {
   .font.classic.size, body {
     font-size: 17px;
     line-height: 1.5em; }
-.font.medium.size, .form label, .form .label, .media .image .caption {
+.font.medium.size, .form label, .form .label, .media .image .caption, .s0 .stat {
   font-size: 15px;
   line-height: 1.5em; }
 .font.small.size, .media-grid .stat, .comments-grid .item .info {
   font-size: 13px;
   line-height: 1.5em; }
 
-b, strong, .b, .header .l span, .header .l a {
+b, strong, .b, .header .l span, .header .l a, .s0 .stat .l {
   font-weight: 500; }
 
 i, .i, .header .social-links, .media .image .caption, .media-grid .image .label {
@@ -472,4 +472,10 @@ a {
     margin-bottom: 0;
     border-bottom: none; }
 
-/*# sourceMappingURL=index.css.map */
+@media screen and (max-width: 768px) {
+  .s0 .stat .l, .s0 .stat .r {
+    float: none; }
+  .s0 .stat .l {
+    margin: 15px 0 5px; } }
+
+/*# sourceMappingURL=gallery.css.map */

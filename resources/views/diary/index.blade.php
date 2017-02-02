@@ -79,17 +79,24 @@
 
     <div class="s3 section">
         <div class="wrapper">
-            <h3>Рацион питания</h3>
+            <h3>Рацион питания на этот день</h3>
             <?php $j = 0; ?>
             @foreach($meals as $meal)
-                @if($j)
-                    <p>&nbsp;</p>
-                @endif
+                @if($j) <p>&nbsp;</p> @endif
                 <p class="b">{{ $meal->name }}</p>
                 @if(!empty($recipes) && $recipes->count())
-                    @foreach($recipes->filter(function($recipe) use ($meal){ return $recipe->meal_id == $meal->id; }) as $recipe)
-                        {{ $recipe->name }},
-                    @endforeach
+                    <?php
+                        $k=0;
+                    foreach($recipes->filter(function($recipe) use ($meal){ return $recipe->meal_id == $meal->id; }) as $recipe){
+                        if($k){
+                            echo ', '.$recipe->name;
+                        }else{
+                            echo $recipe->name;
+                        }
+
+                        $k++;
+                    }
+                    ?>
                 @endif
                 <?php $j++; ?>
             @endforeach

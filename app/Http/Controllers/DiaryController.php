@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 use Date;
 use App\Models\Comment;
 
-class CalendarController extends Controller
+class DiaryController extends Controller
 {
-    protected $css = 'calendar';
+    protected $css = 'diary';
 
     public function index(Request $request)
     {
@@ -24,7 +24,7 @@ class CalendarController extends Controller
             $title = 'Дневник';
 
             return response(
-                view('calendar.empty', [
+                view('diary.empty', [
                     'css'=>$this->css,
                     'title'=>$title,
                     'startAt'=>$startAt,
@@ -48,7 +48,7 @@ class CalendarController extends Controller
         $title = (!empty($calendar->collect_article) && !empty($calendar->text)) ? $calendar->title : 'Дневник. День '.$seasonDaysLeft;
 
         return view(
-            'calendar.index', [
+            'diary.index', [
                 'css'=>$this->css,
                 'title'=>$title,
                 'startAt'=>$startAt,

@@ -32,8 +32,8 @@ Route::get('/', 'IndexController@index')->name('index');
 Route::get('/verify/{token}', 'UsersController@doVerify')->name('verify');
 
 // Calendar
-Route::group(['as' => 'calendar:', 'prefix'=>'calendar'], function () {
-    Route::get('/', 'CalendarController@index')->name('index');
+Route::group(['as' => 'diary:', 'prefix'=>'diary'], function () {
+    Route::get('/', 'DiaryController@index')->name('index');
 });
 
 // Videos

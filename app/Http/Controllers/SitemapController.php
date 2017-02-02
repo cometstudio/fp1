@@ -30,7 +30,7 @@ class SitemapController extends Controller
         $this->node(url()->route('index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 1);
         $this->node(url()->route('videos:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.8);
         $this->node(url()->route('gallery:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.8);
-        $this->node(url()->route('calendar:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
+        $this->node(url()->route('diary:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
         $this->node(url()->route('supplements:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
 
         return response($this->xml->asXML(), 200, $this->headers());

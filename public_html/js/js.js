@@ -42,7 +42,7 @@ function hideMainNavOnScroll()
 
     $(window).on('scroll', function(){
         header = $('.header');
-        indexHeight = header.outerHeight();
+        indexHeight = header.find('.index').outerHeight();
         mainNavHeight = header.outerHeight();
 
         top = $(window).scrollTop();
