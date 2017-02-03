@@ -4,11 +4,6 @@
   $border: 0px $accentExt solid;
 
   height: 100vh;
-  h1{
-    font-size: 32px;
-    line-height: 1.3em;
-    margin-bottom: $contentPadding / 2;
-  }
   .row, .column{
     @extend .box;
 
@@ -17,6 +12,7 @@
     background-position: 50% 50%;
   }
   .row{
+    height: 50%;
     .wrapper{
         height: 100%;
     }
@@ -38,7 +34,7 @@
     }
     .overlay{
       background: $accent;
-      opacity: 1;
+      opacity: 0.8;
       z-index: 1;
     }
     .content{
@@ -47,16 +43,15 @@
       justify-content: center;
       z-index: 2;
       color: #fff;
-      text-align: center;
+      > div{
+        text-align: center;
+      }
     }
     &#r1{
       height: 100%;
     }
-    &#r2{
-      height: 60%;
-    }
     &#r3{
-      height: 40%;
+      border-top: $border;
     }
   }
   @media screen and (max-width: $mobileMaxWidth) {
@@ -68,9 +63,6 @@
           width: 100%;
           border: none;
         }
-        &#c1, &#c2{
-          height: 50%;
-        }
       }
       &#r2{
         display: none;
@@ -78,18 +70,6 @@
       &#r3{
         height: 100%;
       }
-    }
-  }
-}
-
-.s1, .s2{
-  .button{
-    float: right;
-  }
-  @media screen and (max-width: $mobileMaxWidth) {
-    .button{
-      float: none;
-      margin-bottom: $contentPadding / 2;
     }
   }
 }

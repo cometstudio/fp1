@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.29 on 2017-01-30.
+ * Generated for Laravel 5.3.29 on 2017-02-03.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12655,6 +12655,15 @@ namespace {
             return \App\Providers\Date\Date::weekday($time, $type);
         }
         
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function isToday($time = 0){
+            return \App\Providers\Date\Date::isToday($time);
+        }
+        
     }
 
 
@@ -12746,42 +12755,6 @@ namespace {
 
 
     class Vk extends \App\Providers\Vk\Facade{
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function auth($request){
-            return \App\Providers\Vk\Vk::auth($request);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function like($mediaId = null){
-            return \App\Providers\Vk\Vk::like($mediaId);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function follow($userId = 0){
-            return \App\Providers\Vk\Vk::follow($userId);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function _touchAPI($method = '', $data = array()){
-            return \App\Providers\Vk\Vk::_touchAPI($method, $data);
-        }
         
     }
 

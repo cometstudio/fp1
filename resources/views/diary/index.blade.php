@@ -66,7 +66,7 @@
 
     <div class="s3 section">
         <div class="wrapper clearfix">
-            <div class="l">{{ \Date::getDateFromTime($calendar->start_at) }}</div>
+            <div class="desktop-visible l">{{ \Date::getDateFromTime($calendar->start_at) }}</div>
             <div class="r"><i class="fa fa-eye"></i> {{ $calendar->views }} {{ \Dictionary::get('views', $calendar->views) }} <i class="fa fa-comment-o"></i>
                 @if($calendar->comments_total)
                     <a href="#comments">{{ $calendar->comments_total }} {{ \Dictionary::get('comments', $calendar->comments_total) }}</a>

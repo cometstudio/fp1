@@ -21,7 +21,7 @@
             <nav>
                 <span><a href="{{ route('diary:index', [], false) }}">Дневник</a></span>
                 <!--<span><a href="{{ route('videos:index', [], false) }}">Видеоотчёты</a></span>-->
-                <span><a href="{{ route('gallery:index', [], false) }}">Фотогалерея</a></span>
+                <span><a href="{{ route('gallery:index', [], false) }}">Фотогалереи</a></span>
                 @if(!empty($currentUser))
                     <span><img class="profile-picture-img" src="/images/thumbs/{{ $currentUser->getThumbnail() }}.jpg" title="Редактировать профиль" /> <a href="{{ route('my:index', [], false) }}">Профиль</a></span>
                     <span><a href="{{ route('logout', [], false) }}">Выйти</a></span>

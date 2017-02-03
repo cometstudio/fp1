@@ -8,7 +8,7 @@ return [
     'dirs'=>[
         'default'=>[
             'thumbs'=>[130, 130, true],
-            //'small'=>[300, 300, true],
+            'small'=>[800, 500, true],
             'medium'=>[1024, 768, false],
             //'big'=>[1280, 1024, false],
             //'bigGrayscale'=>[640, 640, true, IMG_FILTER_GRAYSCALE],
@@ -16,7 +16,7 @@ return [
         ]
         ,'calendar'=>[
             'thumbs'=>[130, 130, true],
-            //'small'=>[300, 202, true],
+            'small'=>[800, 500, true],
             'medium'=>[1024, 768, false],
             //'big'=>[1280, 1024, false],
             'source'=>[1920, 1200, false],

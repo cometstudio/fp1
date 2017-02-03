@@ -160,4 +160,20 @@ class Date
 
         return config('dictionary.daysOfWeek.'.date('N', $time))[$type];
     }
+
+    public function isToday($time = 0)
+    {
+        try{
+            if(empty($time)) throw new \Exception;
+
+            $todayStartAt = mktime(0, 0, 0, date('n'), date('j'), date('Y'));
+            $todayEndAt = mktime(23, 59, 59, date('n'), date('j'), date('Y'));
+
+            if(($time < $todayStartAt) || ($time > $todayEndAt)) throw new \Exception;
+
+            return true;
+        }catch (\Exception $e){
+            return false;
+        }
+    }
 }

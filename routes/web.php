@@ -31,7 +31,7 @@ Route::group(['middleware' => ['redirectAuthenticatedUser']], function () {
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/verify/{token}', 'UsersController@doVerify')->name('verify');
 
-// Calendar
+// Diary
 Route::group(['as' => 'diary:', 'prefix'=>'diary'], function () {
     Route::get('/', 'DiaryController@index')->name('index');
 });

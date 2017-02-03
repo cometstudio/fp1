@@ -54,9 +54,8 @@
     .l, .r{
       float: none;
     }
-    .r{
-      float: none;
-      margin-top: $contentPadding / 3;
+    .l{
+      margin-bottom: $contentPadding / 3;
     }
   }
 }
