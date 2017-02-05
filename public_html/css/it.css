@@ -211,10 +211,10 @@ input[type="checkbox"] {
   .font.classic.size, body {
     font-size: 17px;
     line-height: 1.5em; }
-.font.medium.size, .form label, .form .label, .media .image .caption {
+.font.medium.size, .form label, .form .label, .media .image .caption, .comments-grid .item .info {
   font-size: 15px;
   line-height: 1.5em; }
-.font.small.size, .media-grid .stat, .comments-grid .item .info {
+.font.small.size, .media-grid .stat {
   font-size: 13px;
   line-height: 1.5em; }
 
@@ -405,12 +405,20 @@ a {
       .header nav .fa {
         display: none; } }
 
-.footer > .wrapper {
-  padding-top: 72px;
-  padding-bottom: 72px; }
+.footer {
+  background: #4a447e;
+  color: #fff; }
+  .footer a {
+    color: inherit; }
+  .footer > .wrapper {
+    padding-top: 72px;
+    padding-bottom: 72px; }
+  @media screen and (max-width: 1024px) {
+    .footer {
+      margin-top: 36px; } }
 
 .media > .wrapper {
-  width: 80%;
+  width: 100%;
   margin: 0 auto; }
 .media .image {
   margin-bottom: 18px; }
@@ -467,8 +475,8 @@ a {
       width: 88%; }
   .comments-grid .item .info {
     margin-bottom: 18px; }
-    .comments-grid .item .info .note {
-      text-align: right; }
+  .comments-grid .item .note {
+    text-align: right; }
   .comments-grid .item:last-child {
     margin-bottom: 0;
     border-bottom: none; }

@@ -17,7 +17,7 @@ return [
         ,'calendar'=>[
             'thumbs'=>[130, 130, true],
             'small'=>[800, 500, true],
-            'medium'=>[1024, 768, false],
+            'medium'=>[1200, 1024, false],
             //'big'=>[1280, 1024, false],
             'source'=>[1920, 1200, false],
         ]

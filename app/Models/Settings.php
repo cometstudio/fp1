@@ -14,6 +14,8 @@ class Settings extends Model
         'main_page_title',
         'title',
         'name',
+        'text_about_project',
+        'text_about_us',
         'counter',
         'instagram_access_token',
         'vkontakte_access_token',

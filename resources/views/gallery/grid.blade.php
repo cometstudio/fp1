@@ -2,7 +2,7 @@
     <div class="x2 row clearfix">
         @foreach($gallery as $day)
             <div class="column">
-                <a href="{{ route('diary:index', ['date'=>(\Date::isToday($day->start_at) ? null : \Date::getDateFromTime($day->start_at, 2))], false) }}" class="image">
+                <a href="{{ route('diary:index', !\Date::isToday($day->start_at) ? ['date'=>\Date::getDateFromTime($day->start_at, 2)] : [], false) }}" class="image">
                     <div class="label">{{ count($day->getGallery()) }} фото</div>
                     <img src="/images/small/{{ $day->getThumbnail() }}.jpg" />
                 </a>

@@ -18,6 +18,14 @@
         <input name="title" value="{{ $item->title }}" type="text" />
     </div>
     <div class="row">
+        <dl>Текст о проекте</dl>
+        <textarea name="text_about_project" class="ck">{{ $item->text_about_project }}</textarea>
+    </div>
+    <div class="row">
+        <dl>Текст о нас</dl>
+        <textarea name="text_about_us" class="ck">{{ $item->text_about_us }}</textarea>
+    </div>
+    <div class="row">
         <dl>Счётчик посещаемости</dl>
         <textarea name="counter">{{ $item->counter }}</textarea>
     </div>

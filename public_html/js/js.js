@@ -6,6 +6,8 @@ $.ajaxSetup({
 
 $(document).ready(function()
 {
+    setupWelcomeScreenHeight();
+
     hideMainNavOnScroll();
 
     fixContentWrapperPosition();
@@ -20,8 +22,15 @@ $(document).ready(function()
 });
 
 $(window).on('resize', function(){
+    setupWelcomeScreenHeight();
+
     fixContentWrapperPosition();
 });
+
+function setupWelcomeScreenHeight()
+{
+    $('.index.s0').height($(window).height() - $('.header').height()).css('padding-top', $('.header').height());
+}
 
 function initMagnificPopup()
 {

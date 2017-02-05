@@ -40,6 +40,14 @@ class IndexController extends Controller
             ->limit(2)
             ->get();
 
+        $mixed = Calendar::where('collect_gallery', '=', 1)->where('gallery', '!=', '')->select(\DB::raw('REPLACE(TRIM(GROUP_CONCAT(gallery)), " ", ",") AS gallery'))->first();
+
+        $mixedGallery = !empty($mixed) ? explode(',', $mixed->gallery) : [];
+
+        shuffle($mixedGallery);
+
+        $mixedGallery = array_slice($mixedGallery, 0, 4);
+
         $settings = view()->shared('settings');
 
         $title = $settings->main_page_title;
@@ -49,6 +57,7 @@ class IndexController extends Controller
                 'css'=>$this->css,
                 'videos'=>$videos,
                 'gallery'=>$gallery,
+                'mixedGallery'=>$mixedGallery,
                 'title'=>$title,
             ]
         );

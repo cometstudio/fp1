@@ -36,7 +36,7 @@
                 <h1>День {{ $seasonDaysLeft }}</h1>
             @endif
 
-            @if(!empty($calendar->text))
+            @if(!empty($calendar->collect_article) && !empty($calendar->text))
                 {!! $calendar->text !!}
             @endif
         </div>
@@ -83,10 +83,10 @@
             <div class="grid">
                 <div class="x2 row clearfix">
                     <div class="column">
-                        Within the field of literary criticism, "text" also refers to the original information content of letters as originally composed, apart from later alterations, deterioration, commentary, translations, paratext, etc.
+                        {!! $settings->text_about_project !!}
                     </div>
                     <div class="column">
-                        Within the field of literary criticism, "text" also refers to the original information content of letters as originally composed, apart from later alterations, deterioration, commentary, translations, paratext, etc.
+                        {!! $settings->text_about_us !!}
                     </div>
                 </div>
             </div>
