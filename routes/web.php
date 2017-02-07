@@ -39,6 +39,7 @@ Route::group(['as' => 'calendar:', 'prefix'=>'calendar'], function () {
 // Diary
 Route::group(['as' => 'diary:', 'prefix'=>'diary'], function () {
     Route::get('/', 'DiaryController@index')->name('index');
+    Route::get('/{id}', 'DiaryController@item')->name('item');
 });
 
 // Videos

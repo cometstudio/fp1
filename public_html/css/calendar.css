@@ -218,13 +218,13 @@ input[type="checkbox"] {
   font-size: 13px;
   line-height: 1.5em; }
 
-b, strong, .b, .header .l span, .header .l a, .s0 .breadcrumbs nav {
+b, strong, .b, .header .l span, .header .l a, .media-grid .title, .s0 .breadcrumbs nav {
   font-weight: 500; }
 
 i, .i, .header .social-links, .media .image .caption, .media-grid .image .label {
   font-style: italic; }
 
-.extrabold, h1, h2, h3 {
+.extrabold, h1, h2, h3, .header .l.index a {
   font-weight: 700; }
 
 .grid .column {
@@ -454,14 +454,14 @@ a {
 .media-grid .info {
   padding: 18px 0; }
 .media-grid .stat {
-  margin-bottom: 24px; }
+  margin-bottom: 12px; }
   .media-grid .stat .l {
     float: left; }
   .media-grid .stat .r {
     float: right; }
 
 .comments-grid .item {
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 1px dashed #ddd; }
   .comments-grid .item .column {
     display: inline-block;
     float: left; }

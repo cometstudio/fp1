@@ -274,6 +274,10 @@ a{
     }
     &.index{
       font-size: 21px;
+
+      a{
+        @extend .extrabold;
+      }
     }
   }
   .r{
@@ -419,7 +423,7 @@ a{
   .stat{
     @extend .small.font.size;
 
-    margin-bottom: $contentPadding / 1.5;
+    margin-bottom: $contentPadding / 3;
     .l{
       float: left;
     }
@@ -427,11 +431,14 @@ a{
       float: right;
     }
   }
+  .title{
+    @extend .b;
+  }
 }
 
 .comments-grid{
   .item{
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px dashed #ddd;
     .column{
       display: inline-block;
       float: left;

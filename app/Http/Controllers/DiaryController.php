@@ -40,4 +40,36 @@ class DiaryController extends Controller
             ]
         );
     }
+
+    public function item(Request $request, $id)
+    {
+        $misc = Misc::where('alias', '=', $request->segment(1))->first();
+
+        $calendar = (new Calendar)->where('id', $id)->firstOrFail();
+
+        $seasonDaysLeft = Date::seasonDaysLeft($calendar->start_at);
+
+        $calendar->setAttribute('views', $calendar->views+1)->update();
+
+        $commentsHash = (new Comment)->hash('calendar_'.$calendar->start_at);
+
+        if(!empty($calendar->collect_article) && !empty($calendar->title)){
+            $title = $calendar->title;
+        }else if(!empty($misc)){
+            $title = !empty($misc->title) ? $misc->title : $misc->name.'. День '.$seasonDaysLeft;
+        }else{
+            $title = '';
+        }
+
+        return view(
+            'diary.item', [
+                'css'=>$this->css,
+                'title'=>$title,
+                'misc'=>$misc,
+                'seasonDaysLeft'=>$seasonDaysLeft,
+                'calendar'=>$calendar,
+                'commentsHash'=>$commentsHash,
+            ]
+        );
+    }
 }
