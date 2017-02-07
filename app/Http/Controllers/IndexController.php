@@ -26,7 +26,7 @@ class IndexController extends Controller
             ->limit(2)
             ->get();
 
-        $gallery = Calendar::where('collect_gallery', '=', 1)
+        $diary = Calendar::where('collect_gallery', '=', 1)
             ->join('comments', 'comments.hash', '=', \DB::raw('MD5(CONCAT("gallery_", calendar.id))'), 'LEFT')
             ->where('gallery', '!=', '')
             ->select([
@@ -56,7 +56,7 @@ class IndexController extends Controller
             'index.index', [
                 'css'=>$this->css,
                 'videos'=>$videos,
-                'gallery'=>$gallery,
+                'diary'=>$diary,
                 'mixedGallery'=>$mixedGallery,
                 'title'=>$title,
             ]

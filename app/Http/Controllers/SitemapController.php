@@ -33,13 +33,13 @@ class SitemapController extends Controller
         $this->node(url()->route('gallery:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.8);
         $this->node(url()->route('supplements:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
 
-        $this->node(url()->route('diary:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
+        $this->node(url()->route('calendar:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
 
         $diary = Calendar::all();
 
         if(!empty($diary) && $diary->count()){
             foreach($diary as $day){
-                if(!\Date::isToday($day->start_at)) $this->node(url()->route('diary:index', ['date'=>\Date::getDateFromTime($day->start_at, 2)]), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
+                if(!\Date::isToday($day->start_at)) $this->node(url()->route('calendar:index', ['date'=>\Date::getDateFromTime($day->start_at, 2)]), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
             }
         }
 

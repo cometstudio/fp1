@@ -249,7 +249,7 @@ i, .i, .header .social-links, .media .image .caption, .media-grid .image .label,
   .grid .x2 .column, .grid .x3 .column, .grid .x4 .column {
     width: auto;
     margin: 0;
-    margin-bottom: 36px; }
+    margin-bottom: 18px; }
     .grid .x2 .column:last-child, .grid .x3 .column:last-child, .grid .x4 .column:last-child {
       margin-bottom: 0; }
   .grid .x2 .column, .grid .x3 .column, .grid .x4 .column {
@@ -525,6 +525,8 @@ a {
   text-align: center; }
   .s0 .row .content > div {
     padding: 5%; }
+  .s0 .row .content a {
+    color: inherit; }
 .s0 .row#r1 {
   height: 100%; }
 .s0 .row#r2 {
@@ -544,8 +546,10 @@ a {
     .s0 .row .column#c1, .s0 .row .column#c2 {
       width: 100%;
       border: none; }
-    .s0 .row .column#c1, .s0 .row .column#c2 {
-      height: 50%; }
+    .s0 .row .column#c1 {
+      height: 45%; }
+    .s0 .row .column#c2 {
+      height: 55%; }
   .s0 .row#r2 {
     display: none; }
   .s0 .row#r3 {

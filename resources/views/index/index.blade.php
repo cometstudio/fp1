@@ -19,7 +19,7 @@
                     <div class="content">
                         <div>
                             <h1>Эти двое взялись за себя всеръёз</h1>
-                            <p>Регулярные тренировки и строгая диета в течение года сделают из них людей </p>
+                            <p>Значительное улучшение физической формы за год: фитнес-<a href="{{ route('calendar:index', [], false) }}">календарь</a> и <a href="{{ route('diary:index', [], false) }}">дневник</a></p>
                         </div>
                     </div>
                     <div class="overlay"></div>
@@ -49,21 +49,24 @@
         </div>
     @endif
 
-    @if(!empty($gallery) && $gallery->count())
+    @if(!empty($diary) && $diary->count())
         <div class="s2 section">
             <div class="wrapper">
+                <h3>Недавнее</h3>
+                <!--
                 <div class="grid">
                     <div class="x2 row clearfix">
                         <div class="column">
-                            <h3>Фотодневник</h3>
+
                         </div>
                         <div class="column clearfix">
-                            <a href="{{ route('gallery:index', [], false) }}" class="modal empty pair button">Смотреть все фото</a>
+                            <a href="{{ route('calendar:index', [], false) }}" class="modal empty pair button">Фитнес-дневник</a>
                         </div>
                     </div>
                 </div>
+                -->
 
-                @include('gallery.grid')
+                @include('diary.grid')
             </div>
         </div>
     @endif

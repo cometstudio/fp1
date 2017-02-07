@@ -123,7 +123,7 @@ i, .i{
       .column {
         width: auto;
         margin: 0;
-        margin-bottom: $contentPadding;
+        margin-bottom: $contentPadding / 2;
         &:last-child{
           margin-bottom: 0;
         }

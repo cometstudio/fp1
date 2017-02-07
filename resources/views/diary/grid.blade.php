@@ -1,8 +1,8 @@
 <div class="media-grid grid">
     <div class="x2 row clearfix">
-        @foreach($gallery as $day)
+        @foreach($diary as $day)
             <div class="column">
-                <a href="{{ route('diary:index', !\Date::isToday($day->start_at) ? ['date'=>\Date::getDateFromTime($day->start_at, 2)] : [], false) }}" class="image">
+                <a href="{{ route('calendar:index', !\Date::isToday($day->start_at) ? ['date'=>\Date::getDateFromTime($day->start_at, 2)] : [], false) }}" class="image">
                     <div class="label">{{ count($day->getGallery()) }} фото</div>
                     <img src="/images/small/{{ $day->getThumbnail() }}.jpg" />
                 </a>

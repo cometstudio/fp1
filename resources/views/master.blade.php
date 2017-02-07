@@ -10,6 +10,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="csrf-token" content="{!! csrf_token() !!}" />
+    <meta name="yandex-verification" content="d8a484876dcec12c" />
     <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/bower_components/magnific-popup/dist/magnific-popup.css" />
     <link rel="stylesheet" type="text/css" href="/panel/js/jquery-ui-1.11.4.custom/jquery-ui.min.css" />

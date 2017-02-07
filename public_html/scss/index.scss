@@ -51,6 +51,9 @@
       > div{
         padding: 5%;
       }
+      a{
+        color: inherit;
+      }
       p{
         @extend .i;
       }
@@ -82,8 +85,11 @@
           width: 100%;
           border: none;
         }
-        &#c1, &#c2{
-          height: 50%;
+        &#c1{
+          height: 45%;
+        }
+        &#c2{
+          height: 55%;
         }
       }
       &#r2{
