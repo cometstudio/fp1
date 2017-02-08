@@ -35,11 +35,25 @@ class SitemapController extends Controller
 
         $this->node(url()->route('calendar:index'), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
 
-        $diary = Calendar::all();
+        $calendar = Calendar::all();
+
+        if(!empty($calendar) && $calendar->count()){
+            foreach($calendar as $day){
+                if(!\Date::isToday($day->start_at)) $this->node(url()->route('calendar:index', ['date'=>\Date::getDateFromTime($day->start_at, 2)]), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
+            }
+        }
+
+        $diary = Calendar::where(function ($query){
+            $query->where('calendar.collect_article', '=', 1)
+                ->orWhere('calendar.collect_gallery', '=', 1)
+                ->orWhere('calendar.collect_video', '=', 1);
+            })
+            ->where('calendar.gallery', '!=', '')
+            ->get();
 
         if(!empty($diary) && $diary->count()){
             foreach($diary as $day){
-                if(!\Date::isToday($day->start_at)) $this->node(url()->route('calendar:index', ['date'=>\Date::getDateFromTime($day->start_at, 2)]), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
+                if(!\Date::isToday($day->start_at)) $this->node(url()->route('diary:item', ['id'=>$day->id]), $this->getDateFromTime((!empty($settings->updated_at->timestamp) ? $settings->updated_at->timestamp : $settings->created_at->timestamp)), 0.5);
             }
         }
 
