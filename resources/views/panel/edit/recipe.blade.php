@@ -5,14 +5,6 @@
         <dl>Название</dl>
         <input name="name" value="{{ $item->name }}" type="text" />
     </div>
-    <div class="row">
-        <dl>Способ приготовления</dl>
-        <textarea name="text" class="ck">{{ $item->text }}</textarea>
-    </div>
-    <div class="row">
-        <dl>Состав</dl>
-        <textarea name="notice" class="ck">{{ $item->notice }}</textarea>
-    </div>
     @if($item->id)
         <div class="row" style="padding-bottom: 10px;">
             @if(!empty($options['supplements']))
@@ -32,8 +24,4 @@
             </div>
         </div>
     @endif
-    <div class="row">
-        <dl>Размер порции</dl>
-        <textarea name="size" class="ck">{{ $item->size }}</textarea>
-    </div>
 @endsection

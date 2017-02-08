@@ -8,9 +8,6 @@ class Recipe extends Model
 
     protected $fillable = [
         'name',
-        'notice',
-        'text',
-        'size',
         'gallery',
         'gallery_titles',
     ];

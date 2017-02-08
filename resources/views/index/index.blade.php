@@ -28,27 +28,6 @@
         </div>
     </div>
 
-    @if(!empty($videos) && $videos->count())
-        <div class="s1 section">
-            <div class="wrapper">
-                <!--
-                <div class="grid">
-                    <div class="x2 row clearfix">
-                        <div class="column">
-                            <h3>Недавние видеоотчёты</h3>
-                        </div>
-                        <div class="column clearfix">
-                            <a href="{{ route('videos:index', [], false) }}" class="empty pair button">Смотреть все видео</a>
-                        </div>
-                    </div>
-                </div>
-                -->
-
-                @include('videos.grid')
-            </div>
-        </div>
-    @endif
-
     @if(!empty($diary) && $diary->count())
         <div class="s2 section">
             <div class="wrapper">
@@ -60,7 +39,7 @@
 
                         </div>
                         <div class="column clearfix">
-                            <a href="{{ route('calendar:index', [], false) }}" class="modal empty pair button">Фитнес-дневник</a>
+                            <a href="{{ route('diary:index', [], false) }}" class="modal empty pair button">Фитнес-дневник</a>
                         </div>
                     </div>
                 </div>
