@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'templateWeekNum'=>0,
+    'templateWeekNum'=>2,
     'months'=>[
         0=>[
             'protein'=>190,
