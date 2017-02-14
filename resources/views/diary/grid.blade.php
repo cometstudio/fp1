@@ -12,7 +12,7 @@
                         <div class="r"><i class="fa fa-eye"></i> {{ $day->views }} <i class="fa fa-comment-o"></i> {{ $day->comments_total }}</div>
                     </div>
                     @if(!empty($day->title))
-                        <div class="title">{{ str_limit(strip_tags($day->title), 120) }}</div>
+                        <div class="title"><a href="{{ route('diary:item', ['id'=>$day->id]) }}">{{ str_limit(strip_tags($day->title), 120) }}</a></div>
                     @endif
                 </div>
             </div>

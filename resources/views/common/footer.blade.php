@@ -1,5 +1,11 @@
 <div class="footer section">
     <div class="wrapper">
-        <a href="{{ route('index', [], false) }}">Фитнес-практика</a>
+        <div class="logo">
+            @if(Request::is('/'))
+                <span>{{ $settings->name }}</span>
+            @else
+                <a href="{{ route('index', [], false) }}">{{ $settings->name }}</a>
+            @endif
+        </div>
     </div>
 </div>

@@ -136,8 +136,12 @@ i, .i{
   }
 }
 
+.content-wrapper, .white-wrapper{
+  background: #fff;
+}
 .content-wrapper{
   margin-top: $contentPadding;
+  padding-bottom: $contentPadding;
 }
 
 .section{
@@ -173,6 +177,7 @@ body{
 
   position: relative;
   min-height: 100%;
+  background: $accent;
   color: $black;
   &-fade, &-wait{
     display: none;
@@ -270,12 +275,12 @@ a{
     float: left;
 
     span, a{
-      @extend .b;
+      //@extend .b;
     }
     &.index{
       font-size: 21px;
 
-      a{
+      span, a{
         @extend .extrabold;
       }
     }
@@ -357,6 +362,9 @@ a{
   > .wrapper{
     padding-top: $contentPadding * 2;
     padding-bottom: $contentPadding * 2;
+  }
+  .logo{
+    @extend .extrabold;
   }
   @media screen and (max-width: $tabletMaxWidth) {
     margin-top: $contentPadding;

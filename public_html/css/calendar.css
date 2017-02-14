@@ -218,13 +218,13 @@ input[type="checkbox"] {
   font-size: 13px;
   line-height: 1.5em; }
 
-b, strong, .b, .header .l span, .header .l a, .media-grid .title, .s0 .breadcrumbs nav {
+b, strong, .b, .media-grid .title, .s0 .breadcrumbs nav {
   font-weight: 500; }
 
 i, .i, .header .social-links, .media .image .caption, .media-grid .image .label {
   font-style: italic; }
 
-.extrabold, h1, h2, h3, .header .l.index a {
+.extrabold, h1, h2, h3, .header .l.index span, .header .l.index a, .footer .logo {
   font-weight: 700; }
 
 .grid .column {
@@ -256,8 +256,12 @@ i, .i, .header .social-links, .media .image .caption, .media-grid .image .label 
     display: block;
     float: none; } }
 
+.content-wrapper, .white-wrapper {
+  background: #fff; }
+
 .content-wrapper {
-  margin-top: 36px; }
+  margin-top: 36px;
+  padding-bottom: 36px; }
 
 .section > .wrapper {
   min-width: 232px;
@@ -282,6 +286,7 @@ html {
 body {
   position: relative;
   min-height: 100%;
+  background: #4a447e;
   color: #333; }
   body-fade, body-wait {
     display: none;
