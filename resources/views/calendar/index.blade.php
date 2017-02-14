@@ -106,7 +106,7 @@
                 <p class="b">{{ $meal->name }}</p>
                 @if(!empty($recipes) && $recipes->count())
                     <?php
-                        $k=0;
+                    $k=0;
                     foreach($recipes->filter(function($recipe) use ($meal){ return $recipe->meal_id == $meal->id; }) as $recipe){
                         if($k){
                             echo ', '.$recipe->name;
@@ -122,6 +122,33 @@
             @endforeach
         </div>
     </div>
+
+
+    @if(!empty($exercises) && $exercises->count())
+        <div class="s8 section">
+            <div class="wrapper">
+                <h3>Упражнения</h3>
+                <div class="exercises-grid grid">
+                    @foreach($exercises as $exercise)
+                        <p class="b">{{ $exercise->name }}</p>
+                        <div class="x2 row clearfix">
+                            <div class="column">
+                                <div class="wrapper">
+                                    {!! $exercise->text !!}
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="wrapper">
+                                    <p class="i b">Количество повторений:</p>
+                                    {!! $exercise->notice !!}
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    @endif
 
     <div class="s6 section">
         <div class="wrapper">
