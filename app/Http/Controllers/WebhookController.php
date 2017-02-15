@@ -50,8 +50,8 @@ class WebhookController extends Controller
                     case 'menu':
                         $messages[] = 'Вот список команд:';
                         $messages[] = '';
-                        $messages[] = '/go - тренировочная программа на сегодня;' ;
-                        $messages[] = '/random - случайная тренировочная программа;' ;
+                        //$messages[] = '/go - тренировочная программа на сегодня;' ;
+                        //$messages[] = '/random - случайная тренировочная программа;' ;
                         $messages[] = '/meal - рацион питания на сегодня.';
                         $messages[] = '';
                         $messages[] = 'Вся программа - на сайте '.env('APP_URL');
@@ -80,15 +80,8 @@ class WebhookController extends Controller
 
                                 $i = 1;
                                 foreach($recipes->filter(function($recipe) use ($meal){ return $recipe->meal_id == $meal->id; }) as $recipe){
-                                    $messages[] = '';
-                                    $messages[] = '*'.$i . ') ' . $recipe->name.'*';
-                                    if($text = trim(strip_tags(html_entity_decode($recipe->notice)))) {
-                                        $messages[] = $this->prepareText($text);
-                                    }
-                                    if($text = trim(strip_tags(html_entity_decode($recipe->text)))){
-                                        $messages[] = '';
-                                        $messages[] = $this->prepareText($text);
-                                    }
+                                    //$messages[] = '';
+                                    $messages[] = $i . ') ' . $recipe->name;
                                     $i++;
                                 }
 

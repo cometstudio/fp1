@@ -15,6 +15,9 @@ class Article extends Model
         'collect_article',
         'gallery',
         'gallery_titles',
+        'collect_gallery',
+        'video',
+        'collect_video',
         'start_at',
     ];
 
@@ -49,11 +52,16 @@ class Article extends Model
                 if(!empty($calendar->title)) throw new \Exception('День уже имеет заголовок');
                 if(!empty($calendar->text)) throw new \Exception('День уже имеет текст');
                 if(!empty($calendar->gallery)) throw new \Exception('День уже имеет фотогалерею');
+                if(!empty($calendar->video)) throw new \Exception('День уже имеет видео');
 
                 $calendar->title = $attrubutes['name'];
                 $calendar->text = $attrubutes['text'];
+                $calendar->collect_article = $attrubutes['collect_article'];
                 $calendar->gallery = $attrubutes['gallery'];
-                $calendar->collect_article = 1;
+                $calendar->gallery_titles = $attrubutes['gallery_titles'];
+                $calendar->collect_gallery = $attrubutes['collect_gallery'];
+                $calendar->video = $attrubutes['video'];
+                $calendar->collect_gallery = $attrubutes['collect_video'];
 
                 $calendar->save();
 
