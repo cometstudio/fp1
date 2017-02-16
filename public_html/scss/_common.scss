@@ -141,7 +141,7 @@ i, .i{
 }
 .content-wrapper{
   margin-top: $contentPadding;
-  padding-bottom: $contentPadding;
+  padding-bottom: $contentPadding * 2;
 }
 
 .section{

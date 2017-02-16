@@ -28,6 +28,24 @@
             </div>
         </div>
 
+        @if(!empty($settings->text_about_project) || !empty($settings->text_about_us))
+            <div class="s3 section">
+                <div class="wrapper">
+                    <h3>О проекте и авторах</h3>
+                    <div class="grid">
+                        <div class="x2 row clearfix">
+                            <div class="column">
+                                {!! $settings->text_about_project !!}
+                            </div>
+                            <div class="column">
+                                {!! $settings->text_about_us !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
         @if(!empty($diary) && $diary->count())
             <div class="s2 section">
                 <div class="wrapper">
