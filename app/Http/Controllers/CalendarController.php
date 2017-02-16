@@ -15,6 +15,12 @@ class CalendarController extends Controller
 
     public function index(Request $request)
     {
+        $aboutUsSeen = request()->session()->get('about_us_seen', 0);
+        if($aboutUsSeen < 2){
+            $aboutUsSeen++;
+            request()->session()->set('about_us_seen', $aboutUsSeen);
+        }
+
         $misc = Misc::where('alias', '=', $request->segment(1))->first();
 
         $startAt = $request->has('date') ? \Date::getTimeFromDate($request->get('date')) : mktime(0, 0, 0, date('n'), date('j'), date('Y'));

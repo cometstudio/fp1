@@ -12,6 +12,12 @@ class IndexController extends Controller
 
     public function index(Request $request)
     {
+        $aboutUsSeen = request()->session()->get('about_us_seen', 0);
+        if($aboutUsSeen < 2){
+            $aboutUsSeen++;
+            request()->session()->set('about_us_seen', $aboutUsSeen);
+        }
+
         $diary = Calendar::where('collect_gallery', '=', 1)
             ->join('comments', 'comments.hash', '=', \DB::raw('MD5(CONCAT("gallery_", calendar.id))'), 'LEFT')
             ->where('gallery', '!=', '')

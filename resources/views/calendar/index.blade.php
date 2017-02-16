@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    @if(!empty($settings->text_about_project) || !empty($settings->text_about_us))
+    @if((request()->session()->get('about_us_seen') < 2) && (!empty($settings->text_about_project) || !empty($settings->text_about_us)))
         <div class="s4 section">
             <div class="wrapper">
                 <h3>О проекте и авторах</h3>
