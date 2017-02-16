@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class Article extends Model
 {
@@ -57,6 +58,7 @@ class Article extends Model
                 $calendar->title = $attrubutes['name'];
                 $calendar->text = $attrubutes['text'];
                 $calendar->collect_article = $attrubutes['collect_article'];
+                if(!empty($attrubutes['collect_article'])) $calendar->article_published_by = Auth::user()->id;
                 $calendar->gallery = $attrubutes['gallery'];
                 $calendar->gallery_titles = $attrubutes['gallery_titles'];
                 $calendar->collect_gallery = $attrubutes['collect_gallery'];

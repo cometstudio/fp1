@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class Calendar extends Model
 {
@@ -14,6 +15,7 @@ class Calendar extends Model
         'title',
         'text',
         'collect_article',
+        'article_published_by',
         'gallery',
         'gallery_titles',
         'collect_gallery',
@@ -180,6 +182,7 @@ class Calendar extends Model
     public function beforeSave($attrubutes = [])
     {
         $this->setStartTime($attrubutes);
+        if(!empty($attrubutes['collect_article'])) $this->article_published_by = Auth::user()->id;
 
         return $this;
     }
