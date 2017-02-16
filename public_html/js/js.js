@@ -29,7 +29,15 @@ $(window).on('resize', function(){
 
 function setupWelcomeScreenHeight()
 {
-    $('.index.s0').height($(window).height() - $('.header').height()).css('padding-top', $('.header').height());
+    var minHeight = 480;
+
+    var height = $(window).height() - $('.header').height();
+
+    if(height < minHeight) height *= 1.4;
+
+    if(height < minHeight) height = minHeight;
+
+    $('.index.s0').height(height).css('padding-top', $('.header').height());
 }
 
 function initMagnificPopup()

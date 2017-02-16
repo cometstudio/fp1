@@ -318,6 +318,8 @@ a{
     }
     .social-links{ display: none; }
     .responsive-menu-control{
+      position: relative;
+      top: 2px;
       display: inline-block;
       float: right;
     }
@@ -364,7 +366,11 @@ a{
     @extend .extrabold;
   }
   @media screen and (max-width: $tabletMaxWidth) {
-    margin-top: $contentPadding;
+    //margin-top: $contentPadding;
+    > .wrapper{
+      padding-top: $contentPadding;
+      padding-bottom: $contentPadding;
+    }
   }
 }
 

@@ -110,7 +110,7 @@ class Resizer {
         return explode(' #', $titlesString);
     }
 
-    public function galleryTitlesString($titles = [])
+    public static function galleryTitlesString($titles = [])
     {
         return empty($titles) ? '' : implode(' #', $titles);
     }

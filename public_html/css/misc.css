@@ -386,6 +386,8 @@ a {
     .header .social-links {
       display: none; }
     .header .responsive-menu-control {
+      position: relative;
+      top: 2px;
       display: inline-block;
       float: right; }
     .header .menu {
@@ -419,8 +421,9 @@ a {
     padding-top: 72px;
     padding-bottom: 72px; }
   @media screen and (max-width: 1024px) {
-    .footer {
-      margin-top: 36px; } }
+    .footer > .wrapper {
+      padding-top: 36px;
+      padding-bottom: 36px; } }
 
 .media > .wrapper {
   width: 100%;

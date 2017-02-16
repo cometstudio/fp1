@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Providers\Resizer\Resizer;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -60,10 +61,10 @@ class Article extends Model
                 $calendar->collect_article = $attrubutes['collect_article'];
                 if(!empty($attrubutes['collect_article'])) $calendar->article_published_by = Auth::user()->id;
                 $calendar->gallery = $attrubutes['gallery'];
-                $calendar->gallery_titles = $attrubutes['gallery_titles'];
+                $calendar->gallery_titles = Resizer::galleryTitlesString($attrubutes['galleryTitles']);
                 $calendar->collect_gallery = $attrubutes['collect_gallery'];
                 $calendar->video = $attrubutes['video'];
-                $calendar->collect_gallery = $attrubutes['collect_video'];
+                $calendar->collect_video = $attrubutes['collect_video'];
 
                 $calendar->save();
 
