@@ -30,7 +30,7 @@
 
     <div class="s1 section">
         <div class="wrapper">
-            @if(!empty($calendar->collect_article) && !empty($calendar->text))
+            @if(!empty($calendar->collect_article))
                 @if(!empty($calendar->title))
                     <h1>{{ $calendar->title }}</h1>
                 @endif
@@ -53,7 +53,7 @@
                         @foreach($calendar->getGallery() as $index=>$picture)
                             <div class="image">
                                 <div class="img">
-                                    <img src="/images/medium/{{ $picture }}.jpg" />
+                                    <img src="/images/medium/{{ $picture }}.jpg" title="{{ !empty($titles[$index]) ? $titles[$index] : '' }}" />
                                 </div>
                                 @if(!empty($titles[$index]))
                                     <div class="caption">{{ $titles[$index] }}</div>
@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    @if(!empty($settings->text_about_project) || !empty($settings->text_about_us))
+    @if((request()->session()->get('about_us_seen') < 2) && (!empty($settings->text_about_project) || !empty($settings->text_about_us)))
         <div class="s4 section">
             <div class="wrapper">
                 <h3>О проекте и авторах</h3>

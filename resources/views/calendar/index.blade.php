@@ -53,7 +53,7 @@
                         @foreach($calendar->getGallery() as $index=>$picture)
                             <div class="image">
                                 <div class="img">
-                                    <img src="/images/medium/{{ $picture }}.jpg" />
+                                    <img src="/images/medium/{{ $picture }}.jpg" title="{{ !empty($titles[$index]) ? $titles[$index] : '' }}" />
                                 </div>
                                 @if(!empty($titles[$index]))
                                     <div class="caption">{{ $titles[$index] }}</div>
@@ -123,33 +123,6 @@
         </div>
     </div>
 
-
-    @if(!empty($exercises) && $exercises->count())
-        <div class="s8 section">
-            <div class="wrapper">
-                <h3>Упражнения</h3>
-                <div class="exercises-grid grid">
-                    @foreach($exercises as $exercise)
-                        <p class="b">{{ $exercise->name }}</p>
-                        <div class="x2 row clearfix">
-                            <div class="column">
-                                <div class="wrapper">
-                                    {!! $exercise->text !!}
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="wrapper">
-                                    <p class="i b">Количество повторений:</p>
-                                    {!! $exercise->notice !!}
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    @endif
-
     <div class="s6 section">
         <div class="wrapper">
             <div class="macros-table grid">
@@ -195,6 +168,28 @@
             </div>
         </div>
     </div>
+
+    @if(!empty($exercises) && $exercises->count())
+        <div class="s8 section">
+            <div class="wrapper">
+                <h3>Упражнения</h3>
+                <div class="exercises-grid grid">
+                    @foreach($exercises as $exercise)
+                        <div class="x2 row clearfix">
+                            <div class="b column">
+                                {{ $exercise->name }}
+                            </div>
+                            <div class="column">
+                                @if(!empty($exercise->notice))
+                                    {{ $exercise->notice }} повторений
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    @endif
 
     <div class="s7 section">
         <div class="wrapper">

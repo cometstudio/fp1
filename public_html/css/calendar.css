@@ -462,7 +462,7 @@ a {
 .media-grid .info {
   padding: 18px 0; }
 .media-grid .stat {
-  margin-bottom: 9px; }
+  margin-bottom: 7.2px; }
   .media-grid .stat .l {
     float: left; }
   .media-grid .stat .r {
@@ -560,5 +560,13 @@ a {
     .macros-table {
       font-size: 13px;
       line-height: 1.5em; } }
+
+@media screen and (max-width: 768px) {
+  .exercises-grid .x2 {
+    margin-bottom: 18px; }
+    .exercises-grid .x2 .column {
+      margin: 0; }
+    .exercises-grid .x2:last-child {
+      margin-bottom: 0; } }
 
 /*# sourceMappingURL=calendar.css.map */
