@@ -14,7 +14,7 @@
                                 <span>&mdash;</span>
                                 <span>{{ $misc->name }}</span>
                             @endif
-                            @if(!empty($calendar->collect_article) && !empty($calendar->title))
+                            @if(!empty($calendar->collect_article) && !empty($calendar->title) && ($calendar->start_at <= time()))
                                 <span>&mdash;</span>
                                 <span>День {{ $seasonDaysLeft }}</span>
                             @endif
@@ -30,19 +30,18 @@
 
     <div class="s1 section">
         <div class="wrapper">
-            @if(!empty($calendar->collect_article) && !empty($calendar->title))
+            @if(!empty($calendar->collect_article) && !empty($calendar->title) && ($calendar->start_at <= time()))
                 <h1>{{ $calendar->title }}</h1>
             @else
                 <h1>День {{ $seasonDaysLeft }}</h1>
             @endif
-
-            @if(!empty($calendar->collect_article) && !empty($calendar->text))
+            @if(!empty($calendar->collect_article) && !empty($calendar->text) && ($calendar->start_at <= time()))
                 {!! $calendar->text !!}
             @endif
         </div>
     </div>
 
-    @if(!empty($calendar->collect_gallery) && !empty($calendar->gallery))
+    @if(!empty($calendar->collect_gallery) && !empty($calendar->gallery) && ($calendar->start_at <= time()))
         <div class="s2 section">
             <div class="wrapper">
                 <div class="media">
@@ -66,7 +65,7 @@
 
     <div class="s3 section">
         <div class="wrapper clearfix">
-            <div class="desktop-visible l">{{ \Date::getDateFromTime($calendar->start_at) }}</div>
+            <div class="desktop-visible l">{{ \Date::getDateFromTime($calendar->start_at, 4) }}</div>
             <div class="r"><i class="fa fa-eye"></i> {{ $calendar->views }} {{ \Dictionary::get('views', $calendar->views) }} <i class="fa fa-comment-o"></i>
                 @if($calendar->comments_total)
                     <a href="#comments">{{ $calendar->comments_total }} {{ \Dictionary::get('comments', $calendar->comments_total) }}</a>

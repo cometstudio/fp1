@@ -23,6 +23,7 @@ class DiaryController extends Controller
                 ->orWhere('calendar.collect_video', '=', 1);
             })
             ->where('calendar.gallery', '!=', '')
+            ->where('calendar.start_at', '<=', time())
             ->join('comments', 'comments.hash', '=', \DB::raw('MD5(CONCAT("'.$request->segments()[0].'_", calendar.id))'), 'LEFT')
             ->select([
                 'calendar.*',
@@ -55,7 +56,7 @@ class DiaryController extends Controller
 
         $misc = Misc::where('alias', '=', $request->segment(1))->first();
 
-        $calendar = (new Calendar)->where('id', $id)->firstOrFail();
+        $calendar = (new Calendar)->where('id', $id)->where('start_at', '<=', time())->firstOrFail();
 
         $seasonDaysLeft = Date::seasonDaysLeft($calendar->start_at);
 

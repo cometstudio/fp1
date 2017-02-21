@@ -89,6 +89,17 @@ class Date
 
                     $date = implode(' ', $date);
                 break;
+                case 4:
+                    $months = config('dictionary.months', []);
+                    $weekdays = config('dictionary.daysOfWeek', []);
+
+                    $date[] = date('j', $time);
+                    $date[] = $months[date('n', $time)][1];
+                    $date[] = date('Y,', $time);
+                    $date[] = mb_convert_case(self::weekday($time), MB_CASE_LOWER);
+
+                    $date = implode(' ', $date);
+                break;
             }
 
 

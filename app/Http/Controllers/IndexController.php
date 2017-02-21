@@ -20,7 +20,8 @@ class IndexController extends Controller
 
         $diary = Calendar::where('collect_gallery', '=', 1)
             ->join('comments', 'comments.hash', '=', \DB::raw('MD5(CONCAT("gallery_", calendar.id))'), 'LEFT')
-            ->where('gallery', '!=', '')
+            ->where('calendar.gallery', '!=', '')
+            ->where('calendar.start_at', '<=', time())
             ->select([
                 'calendar.*',
                 \DB::raw('COUNT(comments.id) AS comments_total'),
@@ -32,7 +33,11 @@ class IndexController extends Controller
             ->limit(4)
             ->get();
 
-        $mixed = Calendar::where('collect_gallery', '=', 1)->where('gallery', '!=', '')->select(\DB::raw('REPLACE(TRIM(GROUP_CONCAT(gallery)), " ", ",") AS gallery'))->first();
+        $mixed = Calendar::where('collect_gallery', '=', 1)
+            ->where('gallery', '!=', '')
+            ->where('start_at', '<=', time())
+            ->select(\DB::raw('REPLACE(TRIM(GROUP_CONCAT(gallery)), " ", ",") AS gallery'))
+            ->first();
 
         $mixedGallery = !empty($mixed) ? explode(',', $mixed->gallery) : [];
 
