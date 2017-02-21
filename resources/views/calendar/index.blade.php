@@ -14,7 +14,7 @@
                                 <span>&mdash;</span>
                                 <span>{{ $misc->name }}</span>
                             @endif
-                            @if(!empty($calendar->collect_article) && !empty($calendar->text))
+                            @if(!empty($calendar->collect_article) && !empty($calendar->title))
                                 <span>&mdash;</span>
                                 <span>День {{ $seasonDaysLeft }}</span>
                             @endif
@@ -30,10 +30,8 @@
 
     <div class="s1 section">
         <div class="wrapper">
-            @if(!empty($calendar->collect_article) && !empty($calendar->text))
-                @if(!empty($calendar->title))
-                    <h1>{{ $calendar->title }}</h1>
-                @endif
+            @if(!empty($calendar->collect_article) && !empty($calendar->title))
+                <h1>{{ $calendar->title }}</h1>
             @else
                 <h1>День {{ $seasonDaysLeft }}</h1>
             @endif
