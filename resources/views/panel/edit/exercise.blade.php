@@ -11,15 +11,15 @@
     </div>
     <div class="row">
         <dl>Количество повсторений в pump-сетах</dl>
-        <textarea name="notice" class="ck">{{ $item->notice }}</textarea>
+        <input name="notice" value="{{ $item->notice }}" type="text" />
     </div>
     <div class="row">
         <dl>Количество повсторений в сетах, классика</dl>
-        <textarea name="notice1" class="ck">{{ $item->notice1 }}</textarea>
+        <input name="notice1" value="{{ $item->notice1 }}" type="text" />
     </div>
     <div class="row">
         <dl>Количество повсторений в сетах на силу</dl>
-        <textarea name="notice2" class="ck">{{ $item->notice2 }}</textarea>
+        <input name="notice2" value="{{ $item->notice2 }}" type="text" />
     </div>
 
 @endsection

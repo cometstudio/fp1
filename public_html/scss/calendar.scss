@@ -97,3 +97,17 @@
     line-height: 1.5em;
   }
 }
+
+.exercises-grid{
+  @media screen and (max-width: $mobileMaxWidth) {
+    .x2{
+      margin-bottom: $contentPadding / 2;
+      .column{
+        margin: 0;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

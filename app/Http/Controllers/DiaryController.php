@@ -47,6 +47,12 @@ class DiaryController extends Controller
 
     public function item(Request $request, $id)
     {
+        $aboutUsSeen = request()->session()->get('about_us_seen', 0);
+        if($aboutUsSeen < 2){
+            $aboutUsSeen++;
+            request()->session()->set('about_us_seen', $aboutUsSeen);
+        }
+
         $misc = Misc::where('alias', '=', $request->segment(1))->first();
 
         $calendar = (new Calendar)->where('id', $id)->firstOrFail();
