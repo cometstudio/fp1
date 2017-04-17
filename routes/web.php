@@ -94,3 +94,8 @@ Route::group(['as' => 'misc:'], function () {
     //Route::get('/{alias}/{subalias?}', 'MiscController@item')->name('item');
 });
 
+Route::get('clone/week', function(\App\Models\Calendar $calendar)
+{
+    $calendar->cloneWeeklyRecipesTemplate();
+});
+
